@@ -167,19 +167,18 @@ header {
     body {
         display: flex;
         flex-direction: column;
-    }
-
-    header {
-        order: 1; /* Logo stays at the top */
-        position: relative;
-        flex-direction: column;
-        padding: 30px 20px;
-        text-align: center;
         background: #000;
     }
 
+    header {
+        display: contents; /* Allows children to be direct flex items of body */
+    }
+
     .logo {
-        margin-bottom: 0;
+        order: 1; /* First */
+        padding: 30px 20px;
+        background: #000;
+        text-align: center;
         font-size: 28px;
     }
 
@@ -188,9 +187,20 @@ header {
         margin-top: 5px;
     }
 
-    /* Move only contact info down */
+    .hero {
+        order: 2; /* Second */
+        min-height: 80vh;
+        height: auto;
+        padding: 60px 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* Move contact info to the very end */
     .contact {
-        order: 3; /* Appears after hero */
+        order: 3; /* Third */
         font-size: 15px;
         line-height: 2;
         display: flex;
@@ -198,8 +208,9 @@ header {
         gap: 20px;
         width: 100%;
         max-width: 400px;
-        margin: 40px auto;
-        padding: 0 25px;
+        margin: 0 auto;
+        padding: 60px 25px;
+        background: #0a0a0a;
     }
 
     .contact div {
@@ -208,28 +219,17 @@ header {
         align-items: center;
         justify-content: center;
         gap: 12px;
-        padding: 20px;
+        padding: 25px;
         background: rgba(255, 255, 255, 0.05);
         border-radius: 15px;
         border: 1px solid rgba(255, 60, 60, 0.2);
     }
 
     .contact i {
-        font-size: 28px;
+        font-size: 32px;
         margin-right: 0;
         margin-bottom: 5px;
         color: #ff3c3c;
-    }
-
-    .hero {
-        order: 2;
-        min-height: calc(100vh - 100px);
-        height: auto;
-        padding: 60px 25px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
     }
 
     .overlay {
@@ -263,7 +263,7 @@ header {
         justify-content: center;
         display: flex;
         flex-wrap: wrap;
-        gap: 15px;
+        gap: 20px;
         margin-top: 40px;
     }
 
