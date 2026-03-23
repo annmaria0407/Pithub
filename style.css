@@ -154,16 +154,74 @@ nav a:hover {
 /* RESPONSIVE */
 @media(max-width: 768px) {
     header {
+        position: relative;
         flex-direction: column;
+        padding: 20px;
+        text-align: center;
+        background: #000;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    .contact {
+        font-size: 12px;
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .contact div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         gap: 10px;
     }
 
+    .contact br {
+        display: none;
+    }
+
     .hero {
-        padding: 20px;
+        min-height: calc(100vh - 140px); /* Adjust based on header height */
+        height: auto;
+        padding: 40px 20px;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .content {
+        max-width: 100%;
     }
 
     .content h1 {
-        font-size: 35px;
+        font-size: 32px;
+    }
+
+    .tagline {
+        border-left: none;
+        border-bottom: 2px solid red;
+        display: inline-block;
+        padding: 0 0 5px 0;
+        margin: 15px 0;
+    }
+
+    .sub {
+        font-size: 13px;
+    }
+
+    .social {
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .social a {
+        margin-right: 0;
     }
 }
 
